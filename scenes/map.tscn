@@ -38,3 +38,4 @@ position = Vector2(572, 326)
 
 [node name="Opponent" parent="." instance=ExtResource("5_2lpho")]
 position = Vector2(1130, 327)
+speed = 800.0
