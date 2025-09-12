@@ -1,5 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://caxkwchtoc7j5"]
+[gd_scene load_steps=3 format=3 uid="uid://caxkwchtoc7j5"]
 
 [ext_resource type="PackedScene" uid="uid://bv2rsxdh8i76d" path="res://scenes/actor.tscn" id="1_ocjdi"]
+[ext_resource type="Script" uid="uid://cedg2wam7xe07" path="res://scripts/opponent.gd" id="2_ha0xr"]
 
 [node name="Opponent" groups=["player"] instance=ExtResource("1_ocjdi")]
+script = ExtResource("2_ha0xr")
