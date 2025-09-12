@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://caxkwchtoc7j5"]
+
+[ext_resource type="PackedScene" uid="uid://bv2rsxdh8i76d" path="res://scenes/actor.tscn" id="1_ocjdi"]
+
+[node name="Opponent" groups=["player"] instance=ExtResource("1_ocjdi")]
