@@ -1,25 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cq0iphrr2vvtt"]
+[gd_scene load_steps=4 format=3 uid="uid://cq0iphrr2vvtt"]
 
-[ext_resource type="Texture2D" uid="uid://c8msxaots0fis" path="res://assets/icon.svg" id="1_7s4qf"]
 [ext_resource type="Script" uid="uid://cs8aw2k741pbf" path="res://scripts/ball.gd" id="1_cxlvu"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxlvu"]
-bounce = 1.0
+[ext_resource type="Texture2D" uid="uid://cc6t80ofog0w7" path="res://assets/ball.png" id="2_cxlvu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7s4qf"]
-size = Vector2(64, 64)
+size = Vector2(40, 40)
 
-[node name="Ball" type="RigidBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_cxlvu")
-contact_monitor = true
-max_contacts_reported = 5
+[node name="Ball" type="CharacterBody2D"]
 script = ExtResource("1_cxlvu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_7s4qf")
+scale = Vector2(1.25, 1.25)
+texture = ExtResource("2_cxlvu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7s4qf")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
