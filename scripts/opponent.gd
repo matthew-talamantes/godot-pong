@@ -21,7 +21,7 @@ func _on_ball_position_changed(new_position: Vector2) -> void:
 func _physics_process(delta: float) -> void:
 	var weight = clampf(speed * delta, 0.0, 1.0)
 	position.x = xPosition
-	position.y = target_position # move_toward(position.y, target_position, speed * delta)
+	velocity.y = (target_position - position.y) * speed * delta
 	velocity.x = 0
 	# Clamp the opponent's position within the screen bounds
 	position.y = clamp(position.y, opponentHeight, viewportHeight - opponentHeight)

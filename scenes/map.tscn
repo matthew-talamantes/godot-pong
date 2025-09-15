@@ -35,7 +35,8 @@ position = Vector2(19, 85)
 
 [node name="Ball" parent="." instance=ExtResource("5_2klcf")]
 position = Vector2(572, 326)
+slowDownChance = 0.25
 
 [node name="Opponent" parent="." instance=ExtResource("5_2lpho")]
 position = Vector2(1130, 327)
-speed = 800.0
+speed = 600.0
