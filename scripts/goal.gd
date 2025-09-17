@@ -26,9 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("ball"):
 		if side == GoalSide.PLAYER:
 			Globals.opponent_score += 1
-			print("Opponent Scored! Score: %d - %d" % [Globals.player_score, Globals.opponent_score])
 			emit_signal("ball_scored", GoalSide.PLAYER)
 		else:
 			Globals.player_score += 1
-			print("Player Scored! Score: %d - %d" % [Globals.player_score, Globals.opponent_score])
 			emit_signal("ball_scored", GoalSide.OPPONENT)

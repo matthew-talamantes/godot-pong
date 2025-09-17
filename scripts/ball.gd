@@ -34,7 +34,6 @@ func _physics_process(delta: float) -> void:
 		if colVelocity != Vector2.ZERO:
 			velocity += colVelocity
 		velocity = velocity.bounce(normal)
-		print("Collided with ", collider.name)
 		if collider.is_in_group("player") and collider != lastCollider:
 			if randf() <= slowDownChance:
 				if velocity.x > 0:
@@ -46,7 +45,6 @@ func _physics_process(delta: float) -> void:
 				elif velocity.y < 0:
 					velocity.y = -initial_speed
 					
-				print("Slowing down")
 		velocity = velocity.clampf(-maxSpeed, maxSpeed)
 		if velocity.x == 0:
 			velocity.x = initial_speed

@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=3 uid="uid://b1gl7bx2po703"]
+
+[ext_resource type="LabelSettings" uid="uid://c5rchvsxe7140" path="res://resources/scoreboardText.tres" id="1_ucmtr"]
+[ext_resource type="Script" uid="uid://d36qx0gd3783j" path="res://scripts/scoreboard.gd" id="1_w5fga"]
+
+[node name="Scoreboard" type="CanvasLayer"]
+script = ExtResource("1_w5fga")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.185
+offset_bottom = 0.11999512
+grow_horizontal = 2
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer"]
+layout_mode = 2
+columns = 3
+
+[node name="PlayerScore" type="Label" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("1_ucmtr")
+horizontal_alignment = 2
+
+[node name="Hyphen" type="Label" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "-"
+label_settings = ExtResource("1_ucmtr")
+horizontal_alignment = 1
+
+[node name="OpponentScore" type="Label" parent="CenterContainer/GridContainer"]
+layout_mode = 2
+text = "0"
+label_settings = ExtResource("1_ucmtr")

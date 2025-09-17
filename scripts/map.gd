@@ -5,6 +5,8 @@ var opponentScene: PackedScene = preload("uid://caxkwchtoc7j5")
 
 var ball: CharacterBody2D
 
+@onready var scoreboard := $Scoreboard
+
 
 func _ready() -> void:
 	# Initialize game state
@@ -27,6 +29,8 @@ func _input(event: InputEvent) -> void:
 
 func _on_goal_2_ball_scored(_side: int) -> void:
 	ball.set_ball()
+	scoreboard.update_scores()
 
 func _on_goal_ball_scored(_side: int) -> void:
 	ball.set_ball()
+	scoreboard.update_scores()

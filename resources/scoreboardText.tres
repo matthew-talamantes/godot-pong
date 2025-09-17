@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://c5rchvsxe7140"]
+
+[ext_resource type="FontFile" uid="uid://rikjcx40imn4" path="res://assets/Doto-VariableFont_ROND,wght.ttf" id="1_7unoh"]
+
+[resource]
+font = ExtResource("1_7unoh")
+font_size = 64
