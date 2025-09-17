@@ -4,4 +4,5 @@
 [ext_resource type="Script" uid="uid://cedg2wam7xe07" path="res://scripts/opponent.gd" id="2_ha0xr"]
 
 [node name="Opponent" groups=["player"] instance=ExtResource("1_ocjdi")]
+collision_mask = 3
 script = ExtResource("2_ha0xr")

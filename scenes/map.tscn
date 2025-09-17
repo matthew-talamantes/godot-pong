@@ -1,10 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://c3rwmi2w4odf4"]
+[gd_scene load_steps=7 format=4 uid="uid://c3rwmi2w4odf4"]
 
 [ext_resource type="Script" uid="uid://esbwmym6bcat" path="res://scripts/map.gd" id="1_gldc4"]
 [ext_resource type="Texture2D" uid="uid://hperljcfj1ce" path="res://assets/net.png" id="1_paxxb"]
 [ext_resource type="PackedScene" uid="uid://dxymfqfvu51u3" path="res://scenes/player.tscn" id="4_0cso3"]
-[ext_resource type="PackedScene" uid="uid://cq0iphrr2vvtt" path="res://scenes/ball.tscn" id="5_2klcf"]
-[ext_resource type="PackedScene" uid="uid://caxkwchtoc7j5" path="res://scenes/opponent.tscn" id="5_2lpho"]
+[ext_resource type="PackedScene" uid="uid://dhccamfjmxcps" path="res://scenes/goal.tscn" id="6_2lpho"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]
 texture = ExtResource("1_paxxb")
@@ -18,6 +17,7 @@ texture = ExtResource("1_paxxb")
 
 [sub_resource type="TileSet" id="TileSet_e0an3"]
 physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 2
 sources/0 = SubResource("TileSetAtlasSource_wijl4")
 
 [node name="Map" type="Node2D"]
@@ -31,12 +31,14 @@ tile_set = SubResource("TileSet_e0an3")
 position = Vector2(576, 324)
 
 [node name="Player" parent="." instance=ExtResource("4_0cso3")]
-position = Vector2(19, 85)
+position = Vector2(20, 85)
 
-[node name="Ball" parent="." instance=ExtResource("5_2klcf")]
-position = Vector2(572, 326)
-slowDownChance = 0.25
+[node name="Goal" parent="." instance=ExtResource("6_2lpho")]
+position = Vector2(-5, 0)
 
-[node name="Opponent" parent="." instance=ExtResource("5_2lpho")]
-position = Vector2(1130, 327)
-speed = 600.0
+[node name="Goal2" parent="." instance=ExtResource("6_2lpho")]
+position = Vector2(1157, 0)
+side = 1
+
+[connection signal="ball_scored" from="Goal" to="." method="_on_goal_ball_scored"]
+[connection signal="ball_scored" from="Goal2" to="." method="_on_goal_2_ball_scored"]

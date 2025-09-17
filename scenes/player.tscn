@@ -4,4 +4,5 @@
 [ext_resource type="Script" uid="uid://fvgp60yml46h" path="res://scripts/player.gd" id="2_g2els"]
 
 [node name="Player" groups=["player"] instance=ExtResource("1_3vyb7")]
+collision_mask = 3
 script = ExtResource("2_g2els")

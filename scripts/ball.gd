@@ -10,12 +10,19 @@ signal position_changed(new_position: Vector2)
 
 func _ready() -> void:
 	randomize()
+	set_ball()
+
+func set_ball() -> void:
+	velocity = Vector2.ZERO
+	var viewportSize: Vector2 = get_viewport().get_visible_rect().size
+	position = viewportSize / 2.0
 	if randi() % 2 == 0:
 		initial_speed = -initial_speed
+	await get_tree().create_timer(1.0).timeout
 	velocity = Vector2(initial_speed, 0)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	emit_signal("position_changed", position)
 
 func _physics_process(delta: float) -> void:
