@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=4 uid="uid://c3rwmi2w4odf4"]
+[gd_scene load_steps=9 format=4 uid="uid://c3rwmi2w4odf4"]
 
 [ext_resource type="Script" uid="uid://esbwmym6bcat" path="res://scripts/map.gd" id="1_gldc4"]
 [ext_resource type="Texture2D" uid="uid://hperljcfj1ce" path="res://assets/net.png" id="1_paxxb"]
 [ext_resource type="PackedScene" uid="uid://b1gl7bx2po703" path="res://scenes/scoreboard.tscn" id="3_2klcf"]
 [ext_resource type="PackedScene" uid="uid://dxymfqfvu51u3" path="res://scenes/player.tscn" id="4_0cso3"]
 [ext_resource type="PackedScene" uid="uid://dhccamfjmxcps" path="res://scenes/goal.tscn" id="6_2lpho"]
+[ext_resource type="PackedScene" uid="uid://bi08mwvmdg0ff" path="res://scenes/main_menu.tscn" id="6_nakos"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wijl4"]
 texture = ExtResource("1_paxxb")
@@ -42,6 +43,8 @@ position = Vector2(1157, 0)
 side = 1
 
 [node name="Scoreboard" parent="." instance=ExtResource("3_2klcf")]
+
+[node name="MainMenu" parent="." instance=ExtResource("6_nakos")]
 
 [connection signal="ball_scored" from="Goal" to="." method="_on_goal_ball_scored"]
 [connection signal="ball_scored" from="Goal2" to="." method="_on_goal_2_ball_scored"]

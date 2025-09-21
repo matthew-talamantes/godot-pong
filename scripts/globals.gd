@@ -4,3 +4,4 @@ extends Node
 var paused: bool = false # Indicates if the game is paused
 var player_score: int = 0 # Player's score
 var opponent_score: int = 0 # opponent's score
+var ongoing_game: bool = false # Indicates if a game is currently ongoing
